@@ -1,0 +1,47 @@
+
+
+Dictado de voz de Google Android no reconoce punto y coma
+
+Buscando en Google con estas palabras:
+
+Dictado de voz de Google Android no reconoce coma y punto
+
+pero no encuentro la solución para el punto y la coma. Lo único que funciona de lo que allí encontré es:
+
+nueva linea 
+nuevo párrafo
+
+Luego yo probando con otros signos encontré estos:
+
+asterisco
+barra
+
+
+ALTERNATIVA para poder ingresar punto y coma
+
+se me ocurrió lo siguiente, usar este equivalente para el punto y coma:
+
+asterisco = coma
+barra = punto
+
+y luego en el editor de texto "QuickEdit" allí reemplazar
+
+ *
+
+por
+
+,
+
+y luego reemplazar:
+
+ /
+
+por 
+
+.
+
+Nota: hay que dejar un espacio al principio de asterisco y barra.
+
+Vea el video:
+
+

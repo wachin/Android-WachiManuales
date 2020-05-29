@@ -1,0 +1,61 @@
+Debe ya estar instaldo adb
+
+Debe conectar con el cable USB el celular al ordenador
+
+en Linux abrir una terminal y poner:
+
+adb devices
+
+si no aparece el número de dispositivo en la terminal significa que no está conectado su celular para transferir archivos, revise eso
+
+ahora lo necesario para entender:
+
+
+
+
+Copiar carpeta/archivo desde Android al ordenador(Linux)
+
+Vamos a usar el comando "pull" el cual significa:
+
+adb pull = Jalar/traer contenido(carpeta/archivos) desde el dispositivo mobil(remoto) hacia el ordenador(local)
+
+según modo de empleo:
+
+adb pull <ruta de origen remota(Celular)> <ruta de destino local(PC)>
+
+lo que debo poner en la terminal es esto (escríbir, edítar en un editor de texto -debe poner todo exacto, minúsculas o mayúsculas, espacios o no espacios-):
+
+Ejemplo 1:
+Copiar carpeta(con sus archivos) desde Android al ordenador con Linux en HOME (.)
+
+adb pull storage/emulated/0/DCIM/Camera . 
+
+Ejemplo 2:
+Copiar carpeta(con todos sus archivos) desde Android a una carpeta específica en el ordenador con Linux
+
+adb pull /storage/emulated/0/Download /home/wachin/Galaxy-J5
+
+
+
+
+Copiar carpeta/archivo desde el ordenador(Linux) a Android
+
+Vamos a usar el comando "push" el cual significa:
+
+adb push = Llevar/empujar contenido(carpeta/archivos) desde el ordenador(local) al dispositivo mobil(remoto)
+
+Modo de uso:
+
+adb push <ruta de origen local(PC)> <ruta de destino remota (Celular)>
+
+Tengo la siguiente carpeta en mi ordenador:
+
+Ejemplo 1:
+Copiar Carpeta(con todo su contenido) desde el ordenador con Linux a Android
+
+adb push /home/wachin/especial /storage/emulated/0/Pictures/Screenshots
+
+Ejemplo 2:
+Copiando un archivo desde el ordenador(Linux) a Android
+
+adb push /home/wachin/Picture/20200514-225902.png /storage/emulated/0/Download 

@@ -1,0 +1,10 @@
+
+
+
+sudo alien --scripts *.rpm
+
+
+
+despues de instalada cambiar a la version
+
+https://facilitarelsoftwarelibre.blogspot.com/2016/01/escoger-una-version-de-java-si-usted.html

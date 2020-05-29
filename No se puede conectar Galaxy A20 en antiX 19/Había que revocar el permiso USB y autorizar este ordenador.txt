@@ -1,0 +1,21 @@
+
+Android ADB devices unauthorized - Stack Overflow
+https://stackoverflow.com/questions/31638582/android-adb-devices-unauthorized
+
+in your DEVICE SETUP, go to developer-options end disable usb-debugging
+
+press REVOKE USB debugging authorizations, click OK
+
+
+Disalbe usb-debugging
+
+again
+
+enable usb-debugging
+
+appear a question that meaning to pair the new PC, then:
+
+adb start-server
+
+
+

@@ -1,0 +1,18 @@
+Samsung Galaxy J5 SM-J500H | Recovery-Mode.com
+https://www.recovery-mode.com/android/samsung-galaxy-j5-sm-j500h.html
+
+Recovery Mode Samsung Galaxy J5 SM-J500H
+
+Turn off the device
+Press and hold Volume UP key + Home Key, while pressing these keys then press and hold Power key for a while
+Release all key when Android or Samsung logo appear then you will see Android System Recovery
+Use Volume keys to select Menu
+Use Power key to Confirm
+Download Mode or ODIN Mode
+
+Turn off the device
+Press and hold Volume Down key + Home Key, while pressing these keys then press and hold Power key for a while
+Release all key when you see ODIN Mode / Download Mode
+Use Volume Up key to continue
+Use Volume Down key to cancel ( Restart the device )
+Hard reset Samsung Galaxy J5 SM-J500H using External Keys ( remove your forgotten pattern unlock )

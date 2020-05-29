@@ -1,0 +1,11 @@
+
+
+Usar el programa AppMgr III, allí en el "Gestor de Apps" seleccionando una aplicacion luego se pueden seleccionar todas las aplicaciones y "Recomendar a los amigos" a travez de correo. Todas estarán con un título y su respectivo link
+
+Nota: Solo que también el programa selecciona a aplicaciones que ya vienen instaladas y no es necesario que estén, así que sacar de la sig lista a:
+
+Samsung Push Service
+Servicios de Google Play
+Tienda de temas
+
+

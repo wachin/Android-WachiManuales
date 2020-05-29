@@ -1,0 +1,19 @@
+
+
+El programa mysword tiene como configurarlo para que uno use la tarjeta externa SD en celulares con poca capacidad de almacenamiento interno
+
+A mi me funcionó en la configuracińo del programa en 
+
+Seleccionar la carpeta de Modulos
+
+le puse en 
+
+(Marcar) Split Modules Path
+
+ahora debo de descargar algun modulo desde el programa y automaticamente se crea una carpeta en la carpeta de esta ruta:
+
+(Este lo copio de nautilus)
+
+mtp://[usb:002,004]/Card/Android/data/com.riversoft.android.mysword/files/bibles
+
+este lugar debo buscarlo siempre para allí copiar mis modulos. Allí también se instalaran los modulos que yo descargue desde ahora en adelante

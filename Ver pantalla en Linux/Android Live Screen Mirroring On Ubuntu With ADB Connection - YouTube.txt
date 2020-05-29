@@ -1,0 +1,67 @@
+Android Live Screen Mirroring On Ubuntu With ADB Connection - YouTube
+https://www.youtube.com/watch?v=x3A3EO8ShMI
+
+How to set up Android Live Screen Mirroring On Ubuntu With ADB Connection
+
+Hello
+
+here i will show you how to mirror the adb (physical device) screen on your ubuntu machine  
+
+Hope you are familiar with adb connection 
+
+Using USB cable you can connect your physical android device to developing PC (here My ubuntu machine :p )
+
+
+Prerequisites
+_____________________
+
+
+* A physical android device activated Develper options
+* ADB Driver (dont worry mostly ubuntu is having that )
+* yeh thats enough !
+
+start the terminal by ctrl+alt+t
+
+Install adb :
+
+sudo apt-get install adb android-tools-adb
+
+(Nota: añado esto android-tools-adb aquí: https://www.youtube.com/watch?v=A2lAMan_sf0)
+
+You will be asked to download here i have already downloaded and installed 
+
+
+
+Install ffmpeg :
+
+sudo apt-get install ffmpeg
+
+check devices connected already in developer mode 
+
+Mirror the phone using command 
+
+adb shell screenrecord --output-format=h264 - | ffplay -
+
+or best
+
+adb shell screenrecord --output-format=h264 - | vlc --demux h264 -
+
+android - How to stream adb shell screenrecord to a windows pc - Stack Overflow
+https://stackoverflow.com/questions/40691426/how-to-stream-adb-shell-screenrecord-to-a-windows-pc
+
+Dont worry just wait a second 
+
+just wait on this step this may take some time :p
+
+whoola thats all
+
+
+me sale un error
+
+
+h264 @ 0x9d8004a0] Stream #0: not enough frames to estimate rate; consider increasing probesize
+
+
+para buscar la solución
+
+adb shell screenrecord --output-format=h264 - | ffplay - h264 @ 0x9d8004a0] Stream #0: not enough frames to estimate rate; consider increasing probesize

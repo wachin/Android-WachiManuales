@@ -1,0 +1,23 @@
+
+DICCIONARIOS:
+Barclay
+Clave
+Concordancia Biblica
+CFME
+es
+es-en-B
+es-en-GU
+IBALPE
+Mujeres de la Biblia
+Nelson
+VineAT-es
+VineNT-es
+
+COMENTARIOS:
+Biblia de Estudios MacArthur
+Comentario de la Biblia Plenitud
+
+
+
+
+

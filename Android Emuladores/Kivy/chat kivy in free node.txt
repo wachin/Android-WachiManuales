@@ -1,0 +1,27 @@
+http://webchat.freenode.net/
+
+wachin
+#kivy
+
+
+[11:14] == wachin [b571d70e@gateway/web/freenode/ip.181.113.215.14] has joined #kivy
+[11:14] -ChanServ- [#kivy] Welcome to #kivy! Please read our community guidelines before asking for help: https://goo.gl/yRB45B. Questions which follow these guidelines have a higher chance of being answered.
+[11:15] <wachin> Hi all, I am try to install The Kivy Android Virtual Machine in Ubuntu 16.04 x86, it is possible to install I ask
+[11:16] <wachin> in this moment I download the Virtual Machine kivy-buildozer-vm.torrent
+[11:17] <wachin> but in some pages said that inside are a 64 bit file. I am not use linux with 64 bits, only my machine have 32 bits
+[11:18] <wachin> can some one tell me
+[11:18] <inclement> https://github.com/Zen-CODE/kivybits/tree/master/KivyCompleteVM <- I don't know, but I recommend this VM
+[11:20] <wachin> Thanks, go to see
+
+
+
+following that link I donwload this:
+
+
+This document outlines the configuration and use of the VM, so that you can use
+and manage the machine optimally.
+
+    Download link: http://kivy.braintrainerplus.com/Kivy_Complete_VM_0.2.ova
+
+    md5 checksum: 18a3d0fccf9a66173ae79ed72db26b7a
+ 

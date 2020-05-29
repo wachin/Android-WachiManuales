@@ -1,0 +1,26 @@
+
+Seguí todas las siguientes instrucciones
+
+[ROM 6.0.1][UNOFFICIAL] CyanogenMod 13.0 vF… | Samsung Galaxy J5
+https://forum.xda-developers.com/galaxy-j5/development/rom-port-6-0-1-cyanogenmod-13-0-galaxy-t3561936 
+
+
+el único error que había cometido es que al momento de instalar CyanogenMod en el TWRP había que hacer un borrado de datos (Wipe Data), lo hice y se pudo instalar correctamente (esto porque lo había instalado antes y nunca iniciaba)
+
+Installing this rom is based 6.0.1
+
+Code:
+1. To have based 6.0.1
+2. Install Recovery with Support Aroma
+ Tenía para esto mi celular Rooteado e instalé Root Essentials https://play.google.com/store/apps/details?id=com.superthomaslab.rootessentials y allí instalé el archivo recovery.img el cual tiene el soporte Aroma. Esto hice aunque también se puede hacer con el Odin en AP https://forum.xda-developers.com/galaxy-j5/development/3-customs-recoverys-galaxy-j5-2015-t3560266
+
+3. Download the ROM (Fix, etc) and copy it to your sd card.
+4. Enter in Recovery and make 5 or 7 wipes (Recommended Full wipes)
+5. After follow the instructions of the Aroma Installer
+6. Select your phone model
+7. Wait 5 to 10 minutes (First start of installation, long delay)
+7. Configure and enjoy the ROM
+Iand dont ask for updates, it's against the rules
+
+
+Y bueno sólo hay que seguir los pasos que están allí

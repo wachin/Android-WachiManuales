@@ -1,0 +1,10 @@
+Where are the .apk files of currently installed apps stored on my Android device
+https://android.stackexchange.com/questions/4510/where-are-the-apk-files-of-currently-installed-apps-stored-on-my-android-device
+
+Use a file manager to look in the following locations:
+
+/data/app
+/data/app-private
+/system/app/
+/sdcard/.android_secure (shows .asec files, not .apks)
+On Samsung phones: /sdcard/external_sd/.android_secure

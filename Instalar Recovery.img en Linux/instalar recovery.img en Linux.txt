@@ -1,0 +1,28 @@
+
+
+
+
+
+
+sudo apt-get install android-tools-adb android-tools-fastboot
+
+3.- Conectar el celular a la PC con el cable USB y pongo el siguiente comando para iniciar 
+
+adb devices
+
+4.- luego de esto puse el siguiente comando en la terminal:
+
+adb reboot bootloader
+
+con este comando el celular se pondrá en el modo "Fastboot"
+
+
+
+
+5.- ahora poner el lugar donde está el .img
+
+# cd /home/wachin/Android/Cyano-twrp-Galaxy-j5/
+/home/wachin/Android/Cyano-twrp-Galaxy-j5/# 
+
+fastboot flash recovery recovery.img
+

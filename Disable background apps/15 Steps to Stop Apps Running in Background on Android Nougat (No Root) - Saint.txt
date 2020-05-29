@@ -1,0 +1,79 @@
+﻿15 Steps to Stop Apps Running in Background on Android Nougat (No Root) - Saint
+http://saintlad.com/stop-apps-running-in-background-on-android/
+It undoubtedly has to be the freedom of symbiosis between both the users and and the applications on their devices.
+And I know Android is much much more capable than just that.
+BUT
+ It does come at a certain price.
+With all that powerful automation which occurs in the background whilst you multitask using different applications, All of this does take a huge toll on your battery life.
+This is especially the case for apps that are not optimized and continues to run in the background on your phone when you don’t want or even need them to.
+Google has been working on to fix this and get all of this optimized for the new and upcoming Android O but…
+Let’s face it..
+Both you and I know that we won’t be seeing Android O on our devices for many months form now (if at all).
+BUT (and this is a good but)
+There’s a way you can handle that yourself without relying on Google if you are running Android Nougat (which is 7.0 or 7.1).
+I’ll show you how you can stop apps running in background on Android Nougat.
+And the best part?
+You don’t need to root anything or even need a third party application.
+Just follow these few quick and simple steps and you can stop apps running in background on Android like your Facebook or your Hangouts on your phone. 
+How does this work?
+You’ll be entering a specific command that allows you to restrict a hidden permission which is not normally available in your Settings.
+This hidden permission is called the RUN_IN_BACKGROUND permission and the only single way you can ever modify it is by using the code:
+cmd appops
+In plain English it means to say is the command line interface for App Ops. You might’ve heard of it before but if not it is actually Google’s user-facing permission management system. 
+Now truth be told, this hidden ADB command that enables you to restrict any application from receiving implicit broadcast intents was actually intended for use only by developers who were looking to simulate how their app would perform under low memory conditions.
+But you don’t need to be a developer to know how to do this, and I believe you can put it to much greater use.
+It is a useful command but be careful of what you restrict.
+Apps like Facebook or Hangouts once restricted will completely stop syncing in the background until you open them up, which is if it is what you are aiming then by all means.
+Oh and don’t be surprised if your emails or your messages get delayed if you run this command on an app that uses background receivers.
+That’s all there is you have to look out for, just in case. Let’s dive right in.
+What you’re going to need
+    • A device with Android Nougat (7.0 or 7.1)
+How to Stop Apps Running in Background on Android Nougat (No Root): 15 Steps
+Step 1:  Go ahead and Install the USB drivers for your particular device OEM. (Google provides a list for you of some universal USB drivers).
+Step 2:  Alright, once you’ve got that out of the way, Download ADB binary for your OS (whether that be Windows, Mac or Linux). These links that I have attached here will always direct you to the most up to date version of the binary. 
+Step 3:  Now extract the contents of the ZIP file that you’ve just downloaded into an easy to find folder on your computer.
+Step 4:  Next, go to your Settings on your phone and then tap on About phone.
+ 
+
+
+Step 5:  Next find the Build Number and tap on it seven times in rapid succession until you see a congratulatory message saying you’re a developer.
+
+Step 6:  Now what you need to is go back to your Settings main menu and then enter Developer Options. This is so that you can enable USB Debugging Mode.
+
+
+Step 7:  Now let’s go back to your computer. Plug your phone into your computer and then change it from the Charge only mode to File transfer (MTP) mode. (Truth is this is not really that necessary for every device but this is just to make sure that everything goes smoothly since some devices require this as a security measure before allowing ADB to work).
+Step 8:  Alright. Now go back to the homepage of your computer and search for where you’ve extracted the ADB binary.
+
+Step 9:  Next, launch Command Prompt (or Terminal) in your ADB directory. If you’re on Windows, hold Shift and Right-Click and Select Open Command Prompt here. (Don’t worry if you see Powershell instead of Command Prompt, it’s the same thing)
+Step 10:  You’re almost done! Now once you’re in Command Prompt (Terminal), Enter this command:
+adb devices
+Step 11:  This will start the ADB daemon if it has not been launched already. Wait for it to finish. Chances are this is your first time right? So, you might see a prompt right about now on your phone asking for you to authorize the connection with your computer. Just select OK when you see Allow USB Debugging.
+
+ 
+ 
+ 
+ 
+Step 12:  Remember that small code that you wrote just now into your Command Prompt? Step 10? Yeah. If you rerun that command once again you will see that your Command Prompt will print the serial number of your device. If it does so, you can move on to the next few steps. If not you are going to need to go back and install the USB drivers properly once again.
+ 
+ 
+Step 13:  Now is where you can choose which apps you want to freeze its background processes for. So what you’re going to need to do is find the package name for the application you want to freeze. You can easily do this by installing the App Inspector app onto your phone.
+ 
+
+Step 1:  Tap on App List
+
+Step 2: Find the app you want gone. (eg. “Compass”)
+
+
+Step 3: Find the package name under the App Name (eg. “com.huawei.compass”)
+ Step 14:  Time for you to go Elliot Alderson. Now go back to the Command Prompt and this time enter:
+ adb shell
+ 
+ 
+Step 15:  Now execute the next few lines of code to free an application’s background processes:
+cmd appops set <package_name> RUN_IN_BACKGROUND ignore
+ 
+
+There you go! 
+If you ever want to revert the change that you’ve just made, all you have to do is just allow an app’s background processes once again, but this time enter:
+cmd appops set <package_name> RUN_IN_BACKGROUND allow
+

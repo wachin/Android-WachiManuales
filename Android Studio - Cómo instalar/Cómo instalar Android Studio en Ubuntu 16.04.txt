@@ -1,0 +1,36 @@
+
+
+Cómo instalar Android Studio en Ubuntu 16.04
+
+17.04 - Android Studio Installation Issues - Ask Ubuntu
+https://askubuntu.com/questions/931921/android-studio-installation-issues
+
+You could try installing Ubuntu Make and then installing Android Studio (that's what I did on 16.04). There's an article on the Ubuntu Wiki that covers it, but the steps are:
+
+install Ubuntu Make directly from the Universe archive:
+
+ $ sudo apt install ubuntu-make
+Then use Ubuntu Make to install Android Studio:
+
+ $ umake android
+And that worked for me.
+
+
+Installing Android Studio :
+How to install Android Studio on Ubuntu? - Ask Ubuntu
+https://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu
+
+umake android
+There may be an error message related to license that may be corrected using an additional parameter:
+
+umake android --accept-license
+Uninstall Android Studio :
+
+umake android --remove
+
+After that just delete Android Studio's related folders in your /home folder :
+14.04 - Uninstall Android Studio completely - Ask Ubuntu
+https://askubuntu.com/questions/546723/uninstall-android-studio-completely
+
+rm -r ~/.AndroidStudio
+rm -r ~/.android

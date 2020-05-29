@@ -1,0 +1,5 @@
+Is possible to make symbolic links in the android filesystem? (and how?) - Android Enthusiasts Stack Exchange
+
+https://android.stackexchange.com/questions/4044/is-possible-to-make-symbolic-links-in-the-android-filesystem-and-how
+
+sólo se puede si uno tiene una partición en ext4

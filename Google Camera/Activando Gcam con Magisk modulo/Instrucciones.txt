@@ -1,0 +1,37 @@
+
+[Module] Camera2API enabler
+https://forum.xda-developers.com/apps/magisk/module-camera2api-enabler-t3656651
+
+Since Google Camera with HDR+ was ported already, it requires that camera2api to be enabled.
+This is done by editing build.prop to add or enable "persist.camera.HAL3.enabled=1".
+Note:
+This mod only adds camera2api support in the build.prop systemlessly. This does not guarantee modded google camera hdr+ will work on your device.
+
+Axon 7 Users:
+Here's a working GCAM that works on my device. However, I don't see any difference with my stock cam hdr. I just use this for slowmo, panorama, photosphere and lens blur effects.
+MGCB_7.0H_C2API_Mid_v.3.6_AllinOne_Full_Manual.apk
+
+
+Requirements:
+Android 5.0 & up
+Magisk v15
+~2014+ Snapdragon SoCs
+
+Instruction:
+Add the zip in Magisk Manager -> Modules and reboot.
+Or you could also flash it in your custom recovery, TWRP etc.
+
+How to check if it is running:
+1. Open terminal and issue command "getprop | grep camera".
+If it's running, you should be able to find a line "persist.camera.HAL3.enabled=1". Check attached screenshot for example.
+Or
+2. Install Camera2 Probe from playstore to check your device's camera capabilities.
+
+UPDATES:
+9-15-17:
+-added v1400 template
+-added camera2api with slowmo fix for Axon 7 users. (I can't guarantee slowmo on other models will work since I used my device's media_profiles.xml file.)
+
+01-25-18
+-updated to v1500 template for C2API - Download this file if you only want the HAL3 enabled.
+-updated to v1500 template for C2API+slowmo+ (credits to @j1505243) 

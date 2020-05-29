@@ -1,0 +1,16 @@
+
+
+Este tutorial es para Windows 
+
+Esta es la unica forma en que se pueden convertir bien los modulos de TheWord y funcionen perfectamente en MySword
+
+MySword tiene una herramienta para importar los modulos de TheWord
+
+http://www.mysword.info/download-mysword/migration-tools
+
+Pero yo tengo mis modulos de e-Sword así que para usar estos en MySword primero debo estos convertirlos a TheWord con la herramienta:
+
+http://www.theword.net/index.php?article.tools&l=english
+
+y de allí si usar la herramienta de MySword para importarlo (solo que es algo dificil pues es sólo para linea de comandos CMD.exe)
+

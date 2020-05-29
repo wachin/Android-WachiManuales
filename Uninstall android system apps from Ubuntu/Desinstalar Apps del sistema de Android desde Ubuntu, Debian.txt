@@ -1,0 +1,201 @@
+Mi celular tiene demasiadas aplicaciones instaladas de fábrica y nunca las uso y más que me ocupan espacio y lo peor no las puedo desinstalar desde Android, pero según investigué si se puede desde Linux
+
+
+1.- Instalar adb:
+
+Poner en la terminal:
+
+sudo apt-get install adb android-tools-adb
+
+Active la Depuración USB, vea el siguiente tutorial en Youtube:
+
+
+Como activar la depuracion USB - YouTube
+https://www.youtube.com/watch?v=w5e5aTMWgjQ
+
+o
+
+¿Cómo habilitar la depuración USB en Android?
+https://www.jiho.com/es/recuperar-datos/habilitar-usb-depuracion-en-android.html
+
+
+2.- Conecte su celular con el cable a su ordenador
+
+Ahora ponga en la terminal lo siguiente (se iniciará el programa):
+
+adb devices
+
+
+3.- Ahora debe ver la lista de todas las aplicaciones para que sepa cual es su nombre:
+
+
+adb shell pm list packages
+
+
+con esto aparecerá una lista muy grande, pueden buscar el nombre de la aplicación allí en la termina, por ejemplo en Konsole aquí estoy buscando la palabra "office":
+
+
+
+4.- En la siguiente imagen le muestro cómo debe reemplazar el nombre con la aplicación que usted desea desinstalar:
+
+
+adb shell pm uninstall -k --user 0 <el.nombre.de.su.app.a.desinstalar>
+
+yo voy a desinstalar Microsoft Office así que copio así:
+
+ y  pongo:
+
+
+adb shell pm uninstall -k --user 0 com.microsoft.office.word
+
+y con eso se desinstalará totalmente en el celular.
+
+
+
+
+RECOMENDACIONES
+
+Yo lo que hago es copiar los nombres de las Apps que quiero desinstalar las cuales las encuento en mi celular:
+
+otro ejemplo:
+
+
+
+y así en una lista las pongo:
+
+
+Galaxy Store
+Grabadora
+Internet
+OneDrive
+OneNote
+Papergarden
+Play Películas
+
+
+
+
+
+y toda la palabra completa o una parte la uso para buscar en la terminal o también se puede copiar todo eso y pegarlo en un editor de texto, así uno tendrá un registro de lo que había
+
+
+Aquí en la siguiente imagen he hecho eso y estoy buscando Galaxy Store pero no se puede, así que sólo busco "Galaxy" y si aparece:
+
+
+como ven creo que la aplicación es esa que se llama:
+
+
+package:com.samsung.android.app.galaxyfinder
+
+
+Y también he tenido problemas en encontrar a OneDrive, pero si pongo sólo la palabra drive:
+
+allí encuentro la palabra skydrive y si esta la pongo en google:
+
+
+
+
+entonces se que ese es.
+
+
+Y una que no encontraba el nombre por nada, tuve que poner en Google las palabras:
+
+
+papergarden android app
+
+
+y allí aparece este:
+
+
+y allí al abrirlo está un nombre:
+
+
+
+ese nombre si está:
+
+
+aquí lo saco
+
+
+package:com.sam.apps.magazines.widget
+
+
+
+Y la siguiente ha sido problemática, puesto que si pongo la palabra video me aparecen dos:
+
+package:com.google.android.videos
+package:com.google.android.video
+
+y cómo saber cual es cual, pues se que una es la que reproduce videos y la otra es la que se llama: Google Películas o Google Play , así que pare evitar equivocaciones voy a usar una aplicación que se llama Apk Extractor:
+
+APK Extractor - Apps en Google Play
+https://play.google.com/store/apps/details?id=com.ext.ui&hl=es_EC
+
+y clic en la lupa:
+
+
+
+y busco la palabra google:
+
+
+
+entonces ya se cual es, es esta:
+
+package:com.google.android.videos
+
+
+Nota: Esta parte es peligrosa, pues por accidente se podría desinstalar la aplicación es que es para reproducir videos y allí si habría que formatear el celular y dejarlo de fabrica para que otra vez esté disponible esa aplicación
+
+
+Y bien por todo he hecho una lista con todas las aplicaciones que quiero desinstalar, los siguientes nombres para usarlos:
+
+
+
+package:com.samsung.android.app.galaxyfinder
+com.sec.android.app.voicenote
+com.sec.android.app.sbrowser
+package:com.microsoft.skydrive
+com.microsoft.office.onenote
+package:com.sam.apps.magazines.widget
+package:com.google.android.videos
+
+
+Nota: Estos comandos es posible que cambien de celular en celular así que sólo vealos como ejemplo
+
+Aunque mejor lo pondré en una tabla para mejor comprensión:
+
+
+Galaxy Store	package:com.samsung.android.app.galaxyfinder
+Grabadora	com.sec.android.app.voicenote
+Internet	com.sec.android.app.sbrowser
+OneDrive	package:com.microsoft.skydrive
+OneNote	com.microsoft.office.onenote
+Papergarden	package:com.sam.apps.magazines.widget
+Play Películas	package:com.google.android.videos
+
+
+Y aquí pondré los comandos listos para ejecutarlos:
+
+
+
+adb shell pm uninstall -k --user 0 package:com.samsung.android.app.galaxyfinder
+adb shell pm uninstall -k --user 0 com.sec.android.app.voicenote
+adb shell pm uninstall -k --user 0 com.sec.android.app.sbrowser
+adb shell pm uninstall -k --user 0 package:com.microsoft.skydrive
+adb shell pm uninstall -k --user 0 com.microsoft.office.onenote
+adb shell pm uninstall -k --user 0 package:com.sam.apps.magazines.widget
+adb shell pm uninstall -k --user 0 package:com.google.android.videos
+
+
+
+Dios les bendiga y les guarde de equivocarse
+
+
+Basado en:
+
+
+How to Uninstall System Apps Without Root in Android - Make Tech Easier
+https://www.maketecheasier.com/uninstall-system-apps-without-root-android/
+
+
+

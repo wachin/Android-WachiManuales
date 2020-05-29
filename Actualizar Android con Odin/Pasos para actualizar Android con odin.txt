@@ -1,0 +1,18 @@
+
+Descargar el Firmware de Samsung Galaxy J5 de:
+
+https://www.sammobile.com/firmwares/galaxy-j5/SM-J500M/
+
+Instructions
+Extract (unzip) the firmware file
+Download Odin v3.13.1
+
+https://dl.sammobile.com/Odin3-v3.13.1.zip
+
+Extract Odin ZIP file
+Open Odin v3.13.1
+Reboot Phone in Download Mode (press and hold Home + Power + Volume Down buttons)
+Connect phone and wait until you get a blue sign in Odin
+Add the firmware file to AP / PDA
+Make sure re-partition is NOT ticked
+Click the start button, sit back and wait few minutes
