@@ -1,0 +1,9 @@
+
+
+Me hice root con Magisk
+
+el archivo lo edité entrando a el desde MIXplorer y está en esta ruta:
+
+Root/system/etc
+
+
