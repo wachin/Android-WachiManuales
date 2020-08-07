@@ -24,34 +24,27 @@ https://github.com/Genymobile/scrcpy/issues/70#issuecomment-373286323
 sudo apt install adb ffmpeg libsdl2-2.0.0 make gcc pkg-config meson ninja-build libavcodec-dev libavformat-dev libavutil-dev libsdl2-dev
 
 
-git clone https://github.com/Genymobile/scrcpy
-cd scrcpy/server
+mkdir scrcpy
+cd scrcpy
+wget -c https://github.com/Genymobile/scrcpy/archive/v1.10.tar.gz
+tar -xzvf v1.10.tar.gz
+cd scrcpy-1.10/server
 wget -c https://github.com/Genymobile/scrcpy/releases/download/v1.10/scrcpy-server-v1.10.jar -O scrcpy-server.jar
 cd ../
-
-
 meson x --buildtype release --strip -Db_lto=true \
-    -Dprebuilt_server=$HOME/scrcpy/server/scrcpy-server.jar
-
-
-
-Nota Wachín: Allí donde se pone el path del servidor hay que tener cuidado, debes señalar el lugar donde va a ser instalado
-https://github.com/Genymobile/scrcpy/blob/master/BUILD.md#prebuilt-server
-
-
-
-
-
+    -Dprebuilt_server=$HOME/scrcpy/scrcpy-1.10/server/scrcpy-server.jar
 ninja -Cx  
+
+
+
+Si lo desea ejecutar desde allí sin instalarlo, se puede poniendo allí:
+
+./run x 
+
+
+Para Instalar scrcpy en el sistema poner:
+
 sudo ninja reconfigure -Cx install
-sudo meson --reconfigure
-
-
-
-meson x --buildtype release --strip -Db_lto=true
-ninja -Cx
-
-wget -c https://github.com/Genymobile/scrcpy/releases/download/v1.10/scrcpy-server-v1.10.jar -O scrcpy-server.jar
 
 
 
@@ -99,7 +92,7 @@ Para evitar que se cierre el programa en Linux evite que se cierre la pantalla e
 
 
 
-to uninstall
+Para desinstalar
 
 sudo rm /usr/local/share/scrcpy/scrcpy-server.jar
 sudo rm /usr/local/bin/scrcpy-server.jar
