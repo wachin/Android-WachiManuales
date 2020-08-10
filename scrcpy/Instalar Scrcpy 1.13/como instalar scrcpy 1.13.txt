@@ -1,0 +1,17 @@
+
+
+Anyway to manually rotate scrcpy view on PC without changing orientation on phone ? · Issue #218 · Genymobile/scrcpy
+https://github.com/Genymobile/scrcpy/issues/218
+
+wget https://github.com/Genymobile/scrcpy/archive/v1.13.tar.gz
+wget https://github.com/Genymobile/scrcpy/releases/download/v1.13/scrcpy-server-v1.13
+tar -xzpf v1.13.tar.gz
+cd scrcpy-1.13
+meson x --buildtype release --strip -Db_lto=true -Dprebuilt_server=../scrcpy-server-v1.13
+ninja -Cx
+sudo ninja -Cx install
+adb connect 192.168.0.122   #my cellphone ip
+scrcpy
+ctrl+→
+
+ 

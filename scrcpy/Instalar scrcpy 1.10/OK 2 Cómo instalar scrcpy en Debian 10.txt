@@ -84,8 +84,7 @@ Para evitar que se cierre el programa en Linux evite que se cierre la pantalla e
 
 Para desinstalar
 
-sudo rm /usr/local/share/scrcpy/scrcpy-server.jar
-sudo rm /usr/local/bin/scrcpy-server.jar
+sudo rm -fr /usr/local/share/scrcpy
 sudo rm /usr/local/bin/scrcpy
 
 
