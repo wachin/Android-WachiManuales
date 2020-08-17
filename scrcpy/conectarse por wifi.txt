@@ -1,0 +1,27 @@
+
+
+Cómo conectarse a través de wi-fi
+
+https://4pda.ru/forum/index.php?showtopic=915423
+
+Hay que conéctese a la misma red que la computadora activando adb a través de tcp
+
+para hacer este tipo en el terminal del dispositivo
+
+
+su
+
+setprop service.adb.tcp.port 5555
+
+stop adbd
+
+start adbd
+
+
+Conéctese al dispositivo a través de ADB (en lugar de DEVICE_IP, ingrese el dispositivo IP (para averiguar el dispositivo IP, vaya a configuración => sobre teléfono => estado) ):
+
+
+adb connect DEVICE_IP:5555 
+
+
+ 
