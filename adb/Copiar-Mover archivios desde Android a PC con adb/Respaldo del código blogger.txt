@@ -1,0 +1,467 @@
+<a href="http://4.bp.blogspot.com/-TorrpfNslZU/XsfyCPlyjxI/AAAAAAAAcBY/KAG6hpwLdzI0tR3Wtn4uc5LYl6r02K6ewCK4BGAYYCw/s1600/Portada%2BPull%2By%2BPush.png" imageanchor="1"><img border="0" height="360" src="https://4.bp.blogspot.com/-TorrpfNslZU/XsfyCPlyjxI/AAAAAAAAcBY/KAG6hpwLdzI0tR3Wtn4uc5LYl6r02K6ewCK4BGAYYCw/s640/Portada%2BPull%2By%2BPush.png" width="640" /></a><br />
+<br />
+<br />
+Tengo un problema serio, al conectar el cable al celular con Android y
+ a la PC con Linux<i>(antiX 19 de 32 bit basado en Debian 10 Buster)</i> no me 
+aparece la memoria para poder pasar desde el celular unos videos de gran
+ tamaño a mi PC, pero sí puedo acceder por cable USB usando adb<br />
+<br />
+<b>Nota 1:</b> Yo se 
+que se puede usar KDE Connect para pasar archivos, pero no es 
+recomendable para archivos de gran tamaño (como vídeos) pues se demora demasiado<br />
+<br />
+<b>Nota 2:</b> Se puede usar adb en Windows, Linux, MAC OS X. Pero este tutorial tratará sólo de Linux y Android. Para Windows vi <a href="https://www.androidrecovery.com/blog/install-use-adb-windows.html" target="_blank">un</a> tutorial y <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/" target="_blank">otro</a> en la Web, pero están en Inglés. Sobre MAC OS X debe haber en algún lado.<br />
+<br />
+<br />
+<br />
+<span style="font-family: inherit;"><b>TUTORIAL APLICABLE A:</b></span><br />
+-&nbsp;<a href="https://distrowatch.com/table.php?distribution=ubuntu" target="_blank">Ubuntu</a>&nbsp;y todos sus <a href="https://www.ubuntu.com/about/about-ubuntu/flavours" target="_blank">sabores o derivados oficiales</a>: <a href="https://www.kubuntu.org/" target="_blank">Kubuntu</a>,&nbsp;<a href="http://lubuntu.me/" target="_blank">Lubuntu</a>,&nbsp;<a href="https://ubuntubudgie.org/" target="_blank">Ubuntu Budgie</a>,&nbsp;<a href="http://www.ubuntukylin.com/" target="_blank">Ubuntu Kylin</a>,&nbsp;<a href="https://ubuntu-mate.org/" target="_blank">Ubuntu MATE</a>,&nbsp;<a href="http://ubuntustudio.org/" target="_blank">Ubuntu Studio</a>,&nbsp;<a href="https://xubuntu.org/" target="_blank">Xubuntu</a>&nbsp;y no oficiales como:&nbsp;<a href="https://distrowatch.com/table.php?distribution=mint" target="_blank">Linux Mint</a>, <a href="https://distrowatch.com/table.php?distribution=elementary" target="_blank">Elementary OS</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=zorin" target="_blank">Zorin OS</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=kdeneon" target="_blank">KDE Neon</a>, <a href="https://distrowatch.com/table.php?distribution=popos" target="_blank">Pop!_OS</a>, <a href="https://distrowatch.com/table.php?distribution=lite" target="_blank">Linux Lite</a>, <a href="https://trisquel.info/" target="_blank">Trisquel</a>,&nbsp;etc y Sistemas Operativos basados en <a href="https://distrowatch.com/table.php?distribution=debian" target="_blank">Debian</a> como son:&nbsp;<a href="https://distrowatch.com/table.php?distribution=mx" target="_blank">MX Linux</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=deepin" target="_blank">Deepin</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=antix" target="_blank">antiX</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=kali" target="_blank">Kali</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=sparky" target="_blank">Sparky</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=parrot" target="_blank">Parrot</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=tails" target="_blank">Tails</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=q4os" target="_blank">Q4OS</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=pureos" target="_blank">PureOS</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=voyager" target="_blank">Voyager Live</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=volumio" target="_blank">Volumio</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=raspbian" target="_blank">Raspbian</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=whonix" target="_blank">Whonix</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=slax" target="_blank">Slax</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=steamos" target="_blank">SteamOS</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=avlinux" target="_blank">AV Linux</a>,&nbsp;&nbsp;<a href="https://distrowatch.com/table.php?distribution=solydxk" target="_blank">SolydXK</a>,&nbsp;&nbsp;<a href="https://distrowatch.com/table.php?distribution=pardus" target="_blank">Pardus</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=proxmox" target="_blank">Proxmox</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=academix" target="_blank">Academic GNU/Linux</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=univention" target="_blank">Univention Corporate Server</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=skolelinux" target="_blank">Debian Edu/Skolelinux</a>, etc, los cuales usan la administración de paquetes&nbsp;<a href="https://es.wikipedia.org/wiki/Deb" target="_blank">DEB</a><br />
+<b>y debería de funcionar en:</b><br />
+distribuciones que usan la administración de paquetes&nbsp;<a href="https://es.wikipedia.org/wiki/RPM_Package_Manager" target="_blank">RPM</a>&nbsp;como&nbsp;<a href="https://distrowatch.com/table.php?distribution=fedora" target="_blank">Fedora</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=redhat" target="_blank">Red Hat</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=opensuse" target="_blank">OpenSUSE</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=centos" target="_blank">CentOS</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=scientific" target="_blank">Scientific</a>, etc<br />
+- Otros Linux basados en&nbsp;<a href="https://distrowatch.com/table.php?distribution=arch" target="_blank">Arch Linux</a>&nbsp;como:&nbsp;<a href="https://distrowatch.com/table.php?distribution=antergos" target="_blank">Antergos</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=manjaro" target="_blank">Manjaro</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=archbang" target="_blank">ArchBang</a><br />
+<span style="font-family: inherit;">- y otras distribuciones independientes de Linux como:&nbsp;</span><a href="https://distrowatch.com/table.php?distribution=gentoo" target="_blank">Gentoo</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=mageia" target="_blank">Mageia</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=quirky" target="_blank">Quirky</a>,&nbsp;<a href="https://distrowatch.com/table.php?distribution=solus" target="_blank">Solus</a>, etc.&nbsp;<b><i>Pero allí se usan otros comandos para instalar aplicaciones los cuales usted deberá de buscar.</i></b><br />
+<br />
+<br />
+<br />
+<br />
+<b>Instalar adb</b><br />
+El siguiente comando es para instalar adb en Linux que usan la administración de paquetes&nbsp;<a href="https://es.wikipedia.org/wiki/Deb" target="_blank">DEB</a><br />
+<br />
+Pongo en la terminal:<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;"><span style="font-size: medium;"><code>sudo apt install android-tools-adb </code></span></pre>
+<br />
+<b>Instalar Total Commander en Android</b><br />
+Buscar en su celular en Google Play, pero también aquí les dejo la dirección:<br />
+<br />
+<a href="https://play.google.com/store/apps/details?id=com.ghisler.android.TotalCommander&amp;hl=en_US">https://play.google.com/store/apps/details?id=com.ghisler.android.TotalCommander&amp;hl=en_US</a><br />
+<br />
+<br />
+<b>Instrucciones</b><br />
+<br />
+- Conectar el cable USB al PC y al celular con Android.<br />
+<br />
+-
+ En su celular asegúrese que está habilitada la depuración USB, para 
+esto hay que habilitar las opciones de desarrollador, esto es todo un 
+trámite y es diferente en cada modelo o versión de Android, así que les 
+dejo esta compilación de consultas:<br />
+<br />
+<a href="https://www.imobie.com/es/trucos-android/habilitar-usb-android.htm" target="_blank">Cómo habilitar la depuración USB de Android - iMobie Inc.</a><br />
+<a href="https://www.fonedog.com/es/android-data-recovery/enable-use-debugging-on-android.html" target="_blank">Cómo habilitar la depuración de USB en un dispositivo Android</a><br />
+<a href="https://www.apeaksoft.com/es/tips/enable-usb-debugging-for-android.html" target="_blank">[Resuelto] Cómo habilitar la depuración USB en un teléfono móvil con Android</a><br />
+<a href="https://www.androidpit.es/que-es-la-depuracion-usb" target="_blank">¿Qué es la depuración USB? | AndroidPIT</a><br />
+<a href="https://www.apowersoft.es/faq/usb-debugging.html" target="_blank">¿Cómo se habilita la depuración USB? -</a><br />
+<a href="https://developer.android.com/studio/debug/dev-options?hl=es-419" target="_blank">Cómo configurar las opciones para desarrolladores en el dispositivo</a><br />
+<a href="https://www.fonepaw.es/tutorial/activar-depuracion-usb-android-pantalla-rota.html" target="_blank">[Resuelto] Activar depuración USB Android con pantalla rota</a><br />
+<a href="https://elandroidelibre.elespanol.com/2015/01/como-activar-el-modo-depuracion-usb-en-android.html" target="_blank">Cómo activar el modo Depuración USB en Android</a><br />
+<br />
+<br />
+- En Linux abrir una terminal y poner:<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;"><span style="font-size: medium;"><code>adb devices</code></span></pre>
+<br />
+la primera que se se lo pone aparece así:<br />
+<br />
+<a href="http://2.bp.blogspot.com/-gtUBZ89PkrU/XsFVeUL5lDI/AAAAAAAAb3o/c34kmQBzLjgdQjAddINWw7Vr2NN_lrsmgCK4BGAYYCw/s1600/20200517-101655.png" imageanchor="1"><img border="0" src="https://2.bp.blogspot.com/-gtUBZ89PkrU/XsFVeUL5lDI/AAAAAAAAb3o/c34kmQBzLjgdQjAddINWw7Vr2NN_lrsmgCK4BGAYYCw/s1600/20200517-101655.png" /></a><br />
+<br />
+<br />
+esto es para que se active adb, luego hay que poner otra vez: adb devices<br />
+<br />
+y debe aparecerles algo así:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-iM_wm88TZNs/Xr9Xh8reAmI/AAAAAAAAbyQ/vBQz6q-4Z2sUdUz5Vr7_R7a2gwax8oQ9ACK4BGAYYCw/s1600/20200515-220117.png"><img border="0" src="https://3.bp.blogspot.com/-iM_wm88TZNs/Xr9Xh8reAmI/AAAAAAAAbyQ/vBQz6q-4Z2sUdUz5Vr7_R7a2gwax8oQ9ACK4BGAYYCw/s1600/20200515-220117.png" /></a><br />
+<br />
+pero si aún después de haber configurado su celular con la depuración USB les aparece así:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-OUWdpKFE4CM/Xr9UTgaPi6I/AAAAAAAAbxs/Xh4wlgxteIEXYl5Nf_LN5ixj8PwGScHWACK4BGAYYCw/s1600/20200515-214652.png"><img border="0" src="https://3.bp.blogspot.com/-OUWdpKFE4CM/Xr9UTgaPi6I/AAAAAAAAbxs/Xh4wlgxteIEXYl5Nf_LN5ixj8PwGScHWACK4BGAYYCw/s1600/20200515-214652.png" /></a><br />
+<br />
+significa que el celular está configurado sólo para cargar el celular (depende del celular las opciones):<br />
+<br />
+<a href="http://2.bp.blogspot.com/-ovgKODxYCaU/Xr9V02TZJeI/AAAAAAAAbx4/rcTMLyCv7voD2yef2vtgPVRiWou3Xr7AACK4BGAYYCw/s1600/20200515-215324.png"><img border="0" height="640" src="https://2.bp.blogspot.com/-ovgKODxYCaU/Xr9V02TZJeI/AAAAAAAAbx4/rcTMLyCv7voD2yef2vtgPVRiWou3Xr7AACK4BGAYYCw/s640/20200515-215324.png" width="360" /></a><br />
+<br />
+<br />
+para corregirlo le doy clic, lo abro y marco "<b>Transferencia de archivos</b>" :<br />
+<br />
+<a href="http://3.bp.blogspot.com/-938mj0_jJAw/Xr9W2Br96rI/AAAAAAAAbyE/RZMvGKCKdQYODLw2NqeI0ruKf89K2iZNwCK4BGAYYCw/s1600/20200515-215812.png"><img border="0" height="640" src="https://3.bp.blogspot.com/-938mj0_jJAw/Xr9W2Br96rI/AAAAAAAAbyE/RZMvGKCKdQYODLw2NqeI0ruKf89K2iZNwCK4BGAYYCw/s640/20200515-215812.png" width="360" /></a><br />
+<br />
+y allí si:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-iM_wm88TZNs/Xr9Xh8reAmI/AAAAAAAAbyQ/vBQz6q-4Z2sUdUz5Vr7_R7a2gwax8oQ9ACK4BGAYYCw/s1600/20200515-220117.png"><img border="0" src="https://3.bp.blogspot.com/-iM_wm88TZNs/Xr9Xh8reAmI/AAAAAAAAbyQ/vBQz6q-4Z2sUdUz5Vr7_R7a2gwax8oQ9ACK4BGAYYCw/s1600/20200515-220117.png" /></a><br />
+<br />
+continuemos<br />
+<br />
+<br />
+<h3>
+<b>Copiar carpeta(con sus archivos) desde Android al ordenador con Linux en HOME (.)</b></h3>
+Vamos a usar el comando "pull" el cual significa:<br />
+<br />
+<b> </b><br />
+<b>adb pull</b> = Jalar/traer contenido(carpeta/archivos) desde el dispositivo mobil(remoto) hacia el ordenador(local)<br />
+<br />
+<a href="http://1.bp.blogspot.com/-mCExGPCoIF8/XsfrHagOgxI/AAAAAAAAcAg/SxpMPJtsZ70QQEgR2mQLD-ZvgcDwnVUlwCK4BGAYYCw/s1600/Pull.png" imageanchor="1"><img border="0" src="https://1.bp.blogspot.com/-mCExGPCoIF8/XsfrHagOgxI/AAAAAAAAcAg/SxpMPJtsZ70QQEgR2mQLD-ZvgcDwnVUlwCK4BGAYYCw/s1600/Pull.png" /></a><br />
+<br />
+Modo de empleo:<br />
+<br />
+adb pull &lt;ruta de origen remota(Celular)&gt; &lt;ruta de destino local(PC)&gt;<br />
+<br />
+dónde:<br />
+<br />
+<b>adb</b> = <a href="https://elandroidelibre.elespanol.com/2018/04/que-es-adb-android-para-que-se-utiliza.html" target="_blank">Adndroid Debug Bridge</a><br />
+<b>Celular</b> = <a href="https://www.android.com/intl/es_es/" target="_blank">Dispositivo mobil con Android</a><br />
+<b>PC</b> = <a href="https://sistemas.com/pc.php" target="_blank">acrónimo de las palabras inglesas <b>Personal Computer</b>, es decir, <b>Computadora Personal</b></a><br />
+<br />
+Abrir
+ con Total Commander en su celular el lugar de la carpeta donde estan 
+los archivos que quiere compartir, en mi caso yo quiero pasar todos los 
+archivos de las fotos y vídeos que guarda la cámara del celular<br />
+<br />
+al abrir por primera vez Total Commander aparece así:<br />
+<br />
+&nbsp;<a href="http://2.bp.blogspot.com/-G3ZkCm77KR8/Xr9Z-B8gCgI/AAAAAAAAbyc/rDhm8xGp6gUXQouDz-5VjL-leNvqw58yQCK4BGAYYCw/s1600/Screenshot_20200515-221028_Total_Commander.png"><img border="0" height="640" src="https://2.bp.blogspot.com/-G3ZkCm77KR8/Xr9Z-B8gCgI/AAAAAAAAbyc/rDhm8xGp6gUXQouDz-5VjL-leNvqw58yQCK4BGAYYCw/s640/Screenshot_20200515-221028_Total_Commander.png" width="360" /></a><br />
+<br />
+&nbsp;la hubicación que yo necesito está dentro donde allí dice fotos, entro allí:<br />
+<br />
+<a href="http://4.bp.blogspot.com/-gIJ0caldva0/Xr9aN6BTWlI/AAAAAAAAbyo/SL_9oTXoBxM5OlIq801-vkCl_KGc4-4vgCK4BGAYYCw/s1600/20200515-221242.png"><img border="0" height="640" src="https://4.bp.blogspot.com/-gIJ0caldva0/Xr9aN6BTWlI/AAAAAAAAbyo/SL_9oTXoBxM5OlIq801-vkCl_KGc4-4vgCK4BGAYYCw/s640/20200515-221242.png" width="360" /></a><br />
+<br />
+y allí está la carpeta que necesito: "<b>Camera</b>"<br />
+<br />
+<a href="http://3.bp.blogspot.com/-eJcJSXsjJJU/Xr9a8EjRrQI/AAAAAAAAby0/BSz197sXE0wp4mGj3TFAVTN1LhnbgziOACK4BGAYYCw/s1600/20200515-221529.png"><img border="0" height="640" src="https://3.bp.blogspot.com/-eJcJSXsjJJU/Xr9a8EjRrQI/AAAAAAAAby0/BSz197sXE0wp4mGj3TFAVTN1LhnbgziOACK4BGAYYCw/s640/20200515-221529.png" width="360" /></a><br />
+<br />
+al entrar allí me aparece así:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-CWE5G984oD0/Xr9a-mjvGII/AAAAAAAAby8/gF0R2hjxpLQNgV0Wjj8cNTVDJ2f_01pXgCK4BGAYYCw/s1600/20200515-221544.png"><img border="0" height="640" src="https://3.bp.blogspot.com/-CWE5G984oD0/Xr9a-mjvGII/AAAAAAAAby8/gF0R2hjxpLQNgV0Wjj8cNTVDJ2f_01pXgCK4BGAYYCw/s640/20200515-221544.png" width="360" /></a><br />
+<br />
+bueno ahora hay que escribir esa ruta puede ser en un editor de texto como Gedit:<br />
+<br />
+storage/emulated/0/DCIM/Camera<br />
+<br />
+Vamos a usar el comando "pull" el cual significa:<br />
+<br />
+<b>adb pull </b>= Enviar archivos desde el dispositivo mobil hacia el ordenador<br />
+<br />
+según modo de empleo:<br />
+<br />
+adb pull &lt;ruta de origen remota(Celular)&gt; &lt;ruta de destino local(PC)&gt;<br />
+<br />
+Lo
+ que debo poner en la terminal es esto (escríbalo, edítelo en un editor 
+de texto -debe poner todo exacto, minúsculas o mayúsculas, espacios o no
+ espacios-):<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;">adb pull storage/emulated/0/DCIM/Camera . </pre>
+<br />
+Como ven allí en la "<span style="color: red;">ruta de origen remota(Celular)</span>" he puesto "<span style="color: red;">storage/emulated/0/DCIM/Camera</span>" luego un espacio, y en la "<span style="color: blue;">ruta de destino local(PC)</span>" he puesto un punto "<span style="font-size: x-large;"><span style="color: blue;">.</span></span>" el cual significa para un ordenador con Linux la ruta "<span style="color: blue;">HOME</span>" que es la "<span style="color: blue;">Carpeta Personal</span>" <br />
+<br />
+Aquí les he hecho un diseño, bueno como dice el dicho: "Una imagen vale más que mil palabras":<br />
+<br />
+<a href="http://2.bp.blogspot.com/-lJsBRnm_c74/XsCTgb3uj0I/AAAAAAAAb20/xP_jlziQcJY13qfsOW96OFkbjqJ8FT46QCK4BGAYYCw/s1600/adb%2Bpull%2Benviar%2Bcarpeta%2Bdesde%2BAndroid%2Ba%2BLinux%2B701x500.png"><img border="0" src="https://2.bp.blogspot.com/-lJsBRnm_c74/XsCTgb3uj0I/AAAAAAAAb20/xP_jlziQcJY13qfsOW96OFkbjqJ8FT46QCK4BGAYYCw/s1600/adb%2Bpull%2Benviar%2Bcarpeta%2Bdesde%2BAndroid%2Ba%2BLinux%2B701x500.png" /></a><br />
+<br />
+si, así como ven, después de "<b>adb pull storage/emulated/0/DCIM/Camera</b>"&nbsp; va un <b>espacio</b> y un <b>punto, </b>eso hará que se copien todos los archivos que están dentro de esa carpeta <b>Camera </b>de Android y se pegarán en <b>HOME</b> (<b>Carpeta personal</b>) en su Linux, y se recreará el nombre de la carpeta original:<br />
+<br />
+<a href="http://1.bp.blogspot.com/-YbeL8r7M3Ws/Xr9c-3OQS0I/AAAAAAAAbzM/pvB7j6Yc6_EijMfdJ67WOZhuDrujPik2QCK4BGAYYCw/s1600/20200515-222108.png"><img border="0" src="https://1.bp.blogspot.com/-YbeL8r7M3Ws/Xr9c-3OQS0I/AAAAAAAAbzM/pvB7j6Yc6_EijMfdJ67WOZhuDrujPik2QCK4BGAYYCw/s1600/20200515-222108.png" /></a><br />
+<br />
+y al entrar en esa carpeta están todos los archivos (fotos y vídeos):<br />
+<br />
+<a href="http://1.bp.blogspot.com/--FmhXmdFEYg/Xr9dACq_WwI/AAAAAAAAbzU/UCGvHTGu8Xgkrn0Ov7kOII9oiJJcvLfOwCK4BGAYYCw/s1600/20200515-222410.png"><img border="0" src="https://1.bp.blogspot.com/--FmhXmdFEYg/Xr9dACq_WwI/AAAAAAAAbzU/UCGvHTGu8Xgkrn0Ov7kOII9oiJJcvLfOwCK4BGAYYCw/s1600/20200515-222410.png" /></a><br />
+<br />
+bien, vamos con otro ejemplo:<br />
+<br />
+<h3>
+<b>Copiar carpeta(con todos sus archivos) desde Android a una carpeta específica en el ordenador con Linux</b></h3>
+Een Android abro Total Commander me ubico en la carpeta donde quiero copiar todo su contenido, el nombre de esa carpeta es:<br />
+<br />
+Descargas<br />
+<br />
+en
+ la siguiente imagen les explico que como en Total Commander había 
+quedado en la carpeta "Camera" debo dar clic en la casa "HOME" para ir 
+al principio:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-NCfpgdNGLr4/XsAkFb6TmVI/AAAAAAAAbz4/gHgggQhTUskDIKbqlKAEr4rP9rbn4Pu4QCK4BGAYYCw/s1600/20200516-123307.png"><img border="0" height="640" src="https://3.bp.blogspot.com/-NCfpgdNGLr4/XsAkFb6TmVI/AAAAAAAAbz4/gHgggQhTUskDIKbqlKAEr4rP9rbn4Pu4QCK4BGAYYCw/s640/20200516-123307.png" width="360" /></a><br />
+<br />
+ahora doy clic en Descargas<br />
+<br />
+<a href="http://1.bp.blogspot.com/-OuE3fgXBaK8/XsAkFK6aTKI/AAAAAAAAbzw/ebcOZMQBRLkK9pBRL5IP4L9n7sBF6LZSACK4BGAYYCw/s1600/20200516-123325.png"><img border="0" height="640" src="https://1.bp.blogspot.com/-OuE3fgXBaK8/XsAkFK6aTKI/AAAAAAAAbzw/ebcOZMQBRLkK9pBRL5IP4L9n7sBF6LZSACK4BGAYYCw/s640/20200516-123325.png" width="360" /></a><br />
+<br />
+y una vez dentro:<br />
+<br />
+<a href="http://4.bp.blogspot.com/-_uzNPYPTuUw/XsAkE7Vuv-I/AAAAAAAAbzo/SgxcjAee2s4F10KFvF7C983a2C4MlrQCQCK4BGAYYCw/s1600/20200516-123344.png"><img border="0" height="640" src="https://4.bp.blogspot.com/-_uzNPYPTuUw/XsAkE7Vuv-I/AAAAAAAAbzo/SgxcjAee2s4F10KFvF7C983a2C4MlrQCQCK4BGAYYCw/s640/20200516-123344.png" width="360" /></a><br />
+<br />
+escribo la ruta en mi sistema operativo Linux en algún editor de texto. La ruta es esta:<br />
+<br />
+/storage/emulated/0/Download<br />
+<br />
+y en Linux en el administrador de archivos Nautilus (o pueden usar cualquier otro) he creado una carpeta en Linux con el nombre:<br />
+<br />
+Galaxy-J5<br />
+<br />
+<a href="http://1.bp.blogspot.com/-K7eJqwLOKv8/XsCUwMPydpI/AAAAAAAAb3A/FjNgo5ZhifoOPMWuqcA_SgWzBn26zVopQCK4BGAYYCw/s1600/20200516-203437.png"><img border="0" src="https://1.bp.blogspot.com/-K7eJqwLOKv8/XsCUwMPydpI/AAAAAAAAb3A/FjNgo5ZhifoOPMWuqcA_SgWzBn26zVopQCK4BGAYYCw/s1600/20200516-203437.png" /></a><br />
+<br />
+pero como observan el nombre no debe tener espacios. Ahora:<br />
+<br />
+<a href="http://2.bp.blogspot.com/-nvfOodGiJH0/XsAly1X8uiI/AAAAAAAAb0M/oJD5C8mha3AHf6uU50H8ubKBV3FtFq0lQCK4BGAYYCw/s1600/20200516-124040.png"><img border="0" src="https://2.bp.blogspot.com/-nvfOodGiJH0/XsAly1X8uiI/AAAAAAAAb0M/oJD5C8mha3AHf6uU50H8ubKBV3FtFq0lQCK4BGAYYCw/s1600/20200516-124040.png" /></a><br />
+<br />
+y copio la ruta:<br />
+<br />
+<a href="http://4.bp.blogspot.com/-75ibR1EJOZY/XsAlz-SiJjI/AAAAAAAAb0U/ZPNs89_fus4eeQFnqZQfwkemuthsKtmFwCK4BGAYYCw/s1600/20200516-124110.png"><img border="0" src="https://4.bp.blogspot.com/-75ibR1EJOZY/XsAlz-SiJjI/AAAAAAAAb0U/ZPNs89_fus4eeQFnqZQfwkemuthsKtmFwCK4BGAYYCw/s1600/20200516-124110.png" /></a><br />
+<br />
+y la pego en un editor de texto:<br />
+<br />
+/home/wachin/Galaxy-J5<br />
+<br />
+usaremos adb pull:<br />
+<br />
+<b>adb pull</b> = Jalar/traer contenido(carpeta/archivos) desde el dispositivo mobil(remoto) hacia el ordenador(local)<br />
+<br />
+<a href="http://2.bp.blogspot.com/-In7WWcD4YkE/XsfrUXV3TAI/AAAAAAAAcAo/Van1cB_Kac8ErCWkslSVk-A1dVtwVTeSQCK4BGAYYCw/s1600/Pull.png" imageanchor="1"><img border="0" src="https://2.bp.blogspot.com/-In7WWcD4YkE/XsfrUXV3TAI/AAAAAAAAcAo/Van1cB_Kac8ErCWkslSVk-A1dVtwVTeSQCK4BGAYYCw/s1600/Pull.png" /></a><br />
+<br />
+según el modo de empleo:<br />
+<br />
+adb pull &lt;ruta de origen remota(Celular)&gt; &lt;ruta de destino local(PC)&gt;<br />
+<br />
+lo que debo poner en la terminal es esto:<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;">adb pull /storage/emulated/0/Download /home/wachin/Galaxy-J5</pre>
+<br />
+como observarán en la terminal ya no va el punto en la "<b>ruta de destino local(PC)</b>" pues ya está allí indicada la ruta&nbsp; "<b>/home/wachin/Galaxy-J5</b>"<br />
+<br />
+Vean en la siguiente imagen el porcentaje de copiado:<br />
+<br />
+<a href="http://4.bp.blogspot.com/-bZlZ3dqZ2NU/XsAnl3lyZGI/AAAAAAAAb0k/ZyfWu59-PQocgkXNk98FaAMfXhQwOo37ACK4BGAYYCw/s1600/20200516-124741.png"><img border="0" src="https://4.bp.blogspot.com/-bZlZ3dqZ2NU/XsAnl3lyZGI/AAAAAAAAb0k/ZyfWu59-PQocgkXNk98FaAMfXhQwOo37ACK4BGAYYCw/s1600/20200516-124741.png" /></a><br />
+<br />
+y se copió:<br />
+<br />
+<a href="http://2.bp.blogspot.com/-ZBlVJZlzFUQ/XsAoPBLbd6I/AAAAAAAAb0w/Su3oSuWsEtcq0CLyBzNd0siKJb_9eZXsACK4BGAYYCw/s1600/20200516-125124.png"><img border="0" src="https://2.bp.blogspot.com/-ZBlVJZlzFUQ/XsAoPBLbd6I/AAAAAAAAb0w/Su3oSuWsEtcq0CLyBzNd0siKJb_9eZXsACK4BGAYYCw/s1600/20200516-125124.png" /></a><br />
+<br />
+y al entrar en la carpeta encuentro todos mis archivos que estaban en Android:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-jDYnUM81W8U/XsAoQ5uFhHI/AAAAAAAAb04/A_KF8CzhIDsT8vrtAV_f4t3q9NT0lMiEwCK4BGAYYCw/s1600/20200516-125145.png"><img border="0" src="https://3.bp.blogspot.com/-jDYnUM81W8U/XsAoQ5uFhHI/AAAAAAAAb04/A_KF8CzhIDsT8vrtAV_f4t3q9NT0lMiEwCK4BGAYYCw/s1600/20200516-125145.png" /></a><br />
+<br />
+ahora vamos con otro caso, pero esta vez al revéz<br />
+<br />
+<br />
+<h3>
+<b>Copiar Carpeta(con todo su contenido) desde el ordenador con Linux a Android</b></h3>
+Usaremos el siguiente comando adb push: <br />
+<br />
+<b>adb push</b> = Llevar/empujar/enviar contenido(carpeta/archivos) desde el ordenador(local) al dispositivo mobil(remoto)<br />
+<br />
+<a href="http://4.bp.blogspot.com/-_QQc0F-2F0c/XsfsAge0WHI/AAAAAAAAcAw/vpIzxk6OHq41ypA4t9bZ4zfECJ0pWWUSgCK4BGAYYCw/s1600/Push.png" imageanchor="1"><img border="0" src="https://4.bp.blogspot.com/-_QQc0F-2F0c/XsfsAge0WHI/AAAAAAAAcAw/vpIzxk6OHq41ypA4t9bZ4zfECJ0pWWUSgCK4BGAYYCw/s1600/Push.png" /></a><br />
+<br />
+Modo de uso:<br />
+<br />
+adb push &lt;ruta de origen local (PC)&gt; &lt;ruta de destino remota (Celular)&gt; <br />
+<br />
+Tengo la siguiente carpeta en mi ordenador:<br />
+<br />
+<a href="http://3.bp.blogspot.com/-IsuMP1my3LE/XsB1KSzXQvI/AAAAAAAAb1Y/oVbnX0sFfME-sKX9OkduFTmhrjsVtp0GACK4BGAYYCw/s1600/20200516-181935.png"><img border="0" src="https://3.bp.blogspot.com/-IsuMP1my3LE/XsB1KSzXQvI/AAAAAAAAb1Y/oVbnX0sFfME-sKX9OkduFTmhrjsVtp0GACK4BGAYYCw/s1600/20200516-181935.png" /></a><br />
+<br />
+entro allí y muestro la ruta con "Ctrl + L"&nbsp; y copio esa ruta:<br />
+<br />
+<a href="http://3.bp.blogspot.com/--leNuu0DGJw/XsB1cxupj5I/AAAAAAAAb1k/WMsbgoQZfuI3XtnquwIF8XFxNgwzzVAVQCK4BGAYYCw/s1600/20200516-182042.png"><img border="0" src="https://3.bp.blogspot.com/--leNuu0DGJw/XsB1cxupj5I/AAAAAAAAb1k/WMsbgoQZfuI3XtnquwIF8XFxNgwzzVAVQCK4BGAYYCw/s1600/20200516-182042.png" /></a><br />
+<br />
+la ruta es esta:<br />
+<br />
+/home/wachin/especial<br />
+<br />
+ahora en mi celular me hubico en el lugar donde quiero copiar alguna carpeta, en mi caso será así:<br />
+<br />
+<a href="http://4.bp.blogspot.com/--rugy7zu7wM/XsB4HUoU6kI/AAAAAAAAb14/5SZNuOXIZFUMR0SRIFY-lEK83tvVAsTRgCK4BGAYYCw/s1600/20200516-183108.png"><img border="0" height="640" src="https://4.bp.blogspot.com/--rugy7zu7wM/XsB4HUoU6kI/AAAAAAAAb14/5SZNuOXIZFUMR0SRIFY-lEK83tvVAsTRgCK4BGAYYCw/s640/20200516-183108.png" width="360" /></a><br />
+<br />
+ahora entro en la carpeta "Pictures"<br />
+<br />
+<a href="http://1.bp.blogspot.com/-uxqMt5LQflQ/XsB4H-LT5qI/AAAAAAAAb2A/326OsKNtvDEwT-PN_36QugM4fA5NSvbqACK4BGAYYCw/s1600/20200516-183121.png"><img border="0" height="640" src="https://1.bp.blogspot.com/-uxqMt5LQflQ/XsB4H-LT5qI/AAAAAAAAb2A/326OsKNtvDEwT-PN_36QugM4fA5NSvbqACK4BGAYYCw/s640/20200516-183121.png" width="360" /></a><br />
+<br />
+&nbsp;y luego en "Screenshots"<br />
+<br />
+<a href="http://4.bp.blogspot.com/-09JsNKibtbk/XsB4CxX6H7I/AAAAAAAAb1w/Dm5W0fyIO54sOrsC1KAENLyluJyA1yEugCK4BGAYYCw/s1600/20200516-183133.png"><img border="0" height="640" src="https://4.bp.blogspot.com/-09JsNKibtbk/XsB4CxX6H7I/AAAAAAAAb1w/Dm5W0fyIO54sOrsC1KAENLyluJyA1yEugCK4BGAYYCw/s640/20200516-183133.png" width="360" /></a><br />
+<br />
+&nbsp;y allí está la ruta y la anoto manualmente en algún editor de texto<br />
+<br />
+<a href="http://3.bp.blogspot.com/-uorUmh2n6No/XsB4I9YFRvI/AAAAAAAAb2I/8tcOQyi2ok0KVfjk9KGo-KcHepOlF0hUACK4BGAYYCw/s1600/20200516-183205.png"><img border="0" height="640" src="https://3.bp.blogspot.com/-uorUmh2n6No/XsB4I9YFRvI/AAAAAAAAb2I/8tcOQyi2ok0KVfjk9KGo-KcHepOlF0hUACK4BGAYYCw/s640/20200516-183205.png" width="360" /></a> <br />
+<br />
+la ruta es esta:<br />
+<br />
+/storage/emulated/0/Pictures/Screenshots<br />
+<br />
+entonces según el modo de uso: <br />
+<br />
+adb push &lt;ruta de origen local (PC)&gt; &lt;ruta de destino remota (Celular)&gt;<br />
+<br />
+debo poner en la terminal:<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;">adb push /home/wachin/especial /storage/emulated/0/Pictures/Screenshots</pre>
+<br />
+y listo, se copiaron:<br />
+<br />
+<a href="http://1.bp.blogspot.com/-xe6A6YHEiRc/XsCZ9g9g68I/AAAAAAAAb3M/-VQ4lZbNZrcpbg6gg7JEG0U3jlzNpOgugCK4BGAYYCw/s1600/touch_screen_mobile_phone%2B-%2BEnviar%2Bcarpeta-archivos%2Bdesde%2BLinux%2Ba%2BAndroid.png"><img border="0" src="https://1.bp.blogspot.com/-xe6A6YHEiRc/XsCZ9g9g68I/AAAAAAAAb3M/-VQ4lZbNZrcpbg6gg7JEG0U3jlzNpOgugCK4BGAYYCw/s1600/touch_screen_mobile_phone%2B-%2BEnviar%2Bcarpeta-archivos%2Bdesde%2BLinux%2Ba%2BAndroid.png" /></a><br />
+<br />
+bien, ahora otro ejemplo:<br />
+<br />
+<br />
+<h3>
+Copiando un archivo desde el ordenador(Linux) a Android</h3>
+Usaremos el siguiente comando adb push:<br />
+<br />
+<b>adb push</b> = Llevar/empujar/enviar contenido(carpeta/archivos) desde el ordenador(local) al dispositivo mobil(remoto)<br />
+<br />
+<a href="http://3.bp.blogspot.com/-lWRI-HynzGc/XsfsShPn1GI/AAAAAAAAcBA/_Vomb-NBYuguOM3BR_TGKr72vl28uIP1ACK4BGAYYCw/s1600/Push.png" imageanchor="1"><img border="0" src="https://3.bp.blogspot.com/-lWRI-HynzGc/XsfsShPn1GI/AAAAAAAAcBA/_Vomb-NBYuguOM3BR_TGKr72vl28uIP1ACK4BGAYYCw/s1600/Push.png" /></a><br />
+<br />
+Modo de uso:<br />
+<br />
+adb push &lt;ruta de origen local (PC)&gt; &lt;ruta de destino remota (Celular)&gt;<br />
+<br />
+Este
+ paso es algo más complicado y en realidad a mi no me parece lo mejor 
+escribirlo todo a mano pues hay que tener mucho más cuidado en copiar 
+bien las letras mayúsculas o minúsculas y números que haya(para mi mejor
+ es copiar una carpeta), ejemplo:<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;"><span style="font-size: medium;"><code>adb push /home/wachin/Picture/20200514-225902.png /storage/emulated/0/Download</code></span></pre>
+<br />
+aquí un diseño para ustedes:<br />
+<br />
+<a href="http://4.bp.blogspot.com/-bq_kSlEgYOU/XsCjKpIzlbI/AAAAAAAAb3Y/EWoCnIRqhgI2hPZ74vHnSCY9muNW52J-ACK4BGAYYCw/s1600/Copiando%2Bun%2Barchivo%2Bdesde%2Bel%2Bordenador%2528Linux%2529%2Ba%2BAndroid.png"><img border="0" src="https://4.bp.blogspot.com/-bq_kSlEgYOU/XsCjKpIzlbI/AAAAAAAAb3Y/EWoCnIRqhgI2hPZ74vHnSCY9muNW52J-ACK4BGAYYCw/s1600/Copiando%2Bun%2Barchivo%2Bdesde%2Bel%2Bordenador%2528Linux%2529%2Ba%2BAndroid.png" /></a><br />
+<br />
+bueno, vamos con otro ejemplo:<br />
+<br />
+<br />
+<h3>
+Copiar un archivo desde Android al ordenador(Linux)</h3>
+Vamos a usar el comando "pull" el cual significa:<br />
+<br />
+<b>adb pull</b> = Jalar/traer contenido(carpeta/archivos) desde el dispositivo mobil(remoto) hacia el ordenador(local)<br />
+<br />
+<a href="http://2.bp.blogspot.com/-xjnEcjr3nS4/XsfsuFKkkmI/AAAAAAAAcBM/k81Zl41q6LQ6Zo_6lHGEJCq--_aMW3YGACK4BGAYYCw/s1600/Pull.png" imageanchor="1"><img border="0" src="https://2.bp.blogspot.com/-xjnEcjr3nS4/XsfsuFKkkmI/AAAAAAAAcBM/k81Zl41q6LQ6Zo_6lHGEJCq--_aMW3YGACK4BGAYYCw/s1600/Pull.png" /></a><br />
+<br />
+según modo de empleo:<br />
+<br />
+adb pull &lt;ruta de origen remota(Celular)&gt; &lt;ruta de destino local(PC)&gt;<br />
+<br />
+Pero
+ esto se complica más todavía para poder escribir la ruta y el nombre 
+del archivo de Android, pero saben, me he puesto a buscar y hay un 
+programa que permite copiar la ruta y el nombre, se llama:<br />
+<br />
+<b>&nbsp;"File Manager by Xiaomi"</b><br />
+<a href="https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer&amp;hl=en_US">https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer&amp;hl=en_US</a><br />
+<br />
+pero necesitan tener instalado KDE Connect y como yo ya había hecho hace algun tiempo un tutorial, tal vez les pueda servir:<br />
+<br />
+<b>Instalar KDE Connect en Ubuntu para enviar archivos desde Android y viceversa desde Nautilus, Nemo, Caja y Dolphin</b><br />
+<a href="https://facilitarelsoftwarelibre.blogspot.com/2018/12/como-instalar-kde-connect-y-las.html">https://facilitarelsoftwarelibre.blogspot.com/2018/12/como-instalar-kde-connect-y-las.html</a><br />
+<br />
+<br />
+aquí he hecho un vídeo:<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/-tDbTqmhlzY/0.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/-tDbTqmhlzY?feature=player_embedded" width="320"></iframe></div>
+<br />
+<br />
+en mi caso deberé poner de la siguiente manera, y para que no se haga tan largo pondré el punto "." para que se guarde en HOME:<br />
+<br />
+<pre class="linux-code" style="background: url(&quot;https://lh3.googleusercontent.com/-E2WZ-k5ArbU/VnnAeX-_qmI/AAAAAAAABDU/i1aaUUYLZh8/s540-Ic42/lincodewachin.gif&quot;) 0px 0px no-repeat scroll rgb(231, 232, 233); border-color: rgb(214, 73, 55); border-style: solid; border-width: 1px 1px 1px 20px; font-family: 'UbuntuBeta Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace; line-height: 22.4px; margin: 10px; max-height: 500px; min-height: 16px; overflow: auto; padding: 28px 10px 10px; z-index: 10000;">adb pull /storage/emulated/0/DCIM/Camera/VID_20200516_210413.mp4 .</pre>
+<br />
+Bueno,
+ y por último dejo un resumen para que lo copien y lo guarden en una 
+editor de texto pues hay que memorizarse lo siguiente:<br />
+<br />
+<br />
+<b>RESUMEN:</b><br />
+<br />
+<pre style="background-color: #f3f3f3; border: 1px dashed rgb(193, 180, 150); line-height: 16px; margin-bottom: 8px; overflow-wrap: break-word; padding: 4pt; vertical-align: baseline;"><span style="color: #333333; font-family: &quot;ubuntumono&quot; , &quot;courier&quot; , monospace;"><span style="font-size: 14.85px; white-space: pre-wrap;">Debe ya estar instaldo adb
+
+Debe conectar con el cable USB el celular al ordenador
+
+en Linux abrir una terminal y poner:
+
+adb devices
+
+si no aparece el número de dispositivo en la terminal significa que no está conectado su celular para transferir archivos, revise eso
+
+ahora lo necesario para entender:
+
+
+
+
+Copiar carpeta/archivo desde Android al ordenador(Linux)
+
+Vamos a usar el comando "pull" el cual significa:
+
+adb pull = Jalar/traer contenido(carpeta/archivos) desde el dispositivo mobil(remoto) hacia el ordenador(local)
+
+según modo de empleo:
+
+adb pull &lt;ruta de origen remota(Celular)&gt; &lt;ruta de destino local(PC)&gt;
+
+lo que debo poner en la terminal es esto (escríbir, edítar en un editor de texto -debe poner todo exacto, minúsculas o mayúsculas, espacios o no espacios-):
+
+Ejemplo 1:
+Copiar carpeta(con sus archivos) desde Android al ordenador con Linux en HOME (.)
+
+adb pull storage/emulated/0/DCIM/Camera . 
+
+Ejemplo 2:
+Copiar carpeta(con todos sus archivos) desde Android a una carpeta específica en el ordenador con Linux
+
+adb pull /storage/emulated/0/Download /home/wachin/Galaxy-J5
+
+
+
+
+Copiar carpeta/archivo desde el ordenador(Linux) a Android
+
+Vamos a usar el comando "push" el cual significa:
+
+adb push = Llevar/empujar contenido(carpeta/archivos) desde el ordenador(local) al dispositivo mobil(remoto)
+
+Modo de uso:
+
+adb push &lt;ruta de origen local(PC)&gt; &lt;ruta de destino remota (Celular)&gt;
+
+Tengo la siguiente carpeta en mi ordenador:
+
+Ejemplo 1:
+Copiar Carpeta(con todo su contenido) desde el ordenador con Linux a Android
+
+adb push /home/wachin/especial /storage/emulated/0/Pictures/Screenshots
+
+Ejemplo 2:
+Copiando un archivo desde el ordenador(Linux) a Android
+
+adb push /home/wachin/Picture/20200514-225902.png /storage/emulated/0/Download
+</span></span></pre>
+<br />
+Dios les bendiga<br />
+<br />
+<br />
+<b>CONSULTAS/RECURSOS USADOS</b><br />
+<br />
+<b>Diseños gráficos: </b><br />
+<br />
+<b>Touch screen mobile phone (svg)</b><br />
+<a href="https://openclipart.org/detail/275373/touchscreenmobilephone">https://openclipart.org/detail/275373/touchscreenmobilephone</a><br />
+<b>EGO Man - Openclipart</b><br />
+<a href="https://openclipart.org/detail/202238/ego-man">https://openclipart.org/detail/202238/ego-man</a><br />
+<b>Man push - Openclipart</b><br />
+<a href="https://openclipart.org/detail/74761/man-push">https://openclipart.org/detail/74761/man-push</a><br />
+<b>A gray laptop - Openclipart</b><br />
+<a href="https://openclipart.org/detail/27649/a-gray-laptop">https://openclipart.org/detail/27649/a-gray-laptop</a> <br />
+<br />
+<b>Consultas:</b><br />
+<br />
+<b>android - How to copy all files to my PC using ADB tool? - Stack Overflow</b><br />
+<a href="https://stackoverflow.com/a/39138771/10648253">https://stackoverflow.com/a/39138771/10648253</a>&nbsp; <br />
+<b>no permissions (user in plugdev group; are your udev rules wrong?)</b><br />
+<a href="https://stackoverflow.com/a/49216677/10648253">https://stackoverflow.com/a/49216677/10648253</a> <br />
+<b>How to Install and Use ADB, the Android Debug Bridge Utility</b><br />
+<a href="https://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-debug-bridge-utility/">https://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-debug-bridge-utility/</a><br />
+<b>How to Copy a File from the Computer to Android with ADB Push?</b><br />
+<a href="https://www.androidexplained.com/adb-push-copy-file/">https://www.androidexplained.com/adb-push-copy-file/</a><br />
+<b>ADB Push and Pull - Push and Pull Files on Android Using Commands</b><br />
+<a href="https://www.droidviews.com/push-pull-files-android-using-adb-commands/">https://www.droidviews.com/push-pull-files-android-using-adb-commands/</a><br />
+<b>git push | Atlassian Git Tutorial</b><br />
+<a href="https://www.atlassian.com/es/git/tutorials/syncing/git-push">https://www.atlassian.com/es/git/tutorials/syncing/git-push</a><br />
+<b>git pull | Atlassian Git Tutorial</b><br />
+<a href="https://www.atlassian.com/es/git/tutorials/syncing/git-pull">https://www.atlassian.com/es/git/tutorials/syncing/git-pull</a> 
