@@ -1,0 +1,23 @@
+
+
+adb devices
+
+adb shell
+
+adb ls
+
+allí se mostrarán los directorios y archivos root del celular 
+
+y luego poner 
+
+cd sdcard
+
+eso para entrar al almacenamiento interno
+
+y poner:
+
+ls
+
+y se mostrarán todos los directorios y archivos del almacenamiento interno
+
+
