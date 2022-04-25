@@ -28,7 +28,7 @@ lo que debo poner en la terminal es esto (escríbir, edítar en un editor de tex
 Ejemplo 1:
 Copiar carpeta(con sus archivos) desde Android al ordenador con Linux en HOME (.)
 
-adb pull storage/emulated/0/DCIM/Camera . 
+adb pull /storage/emulated/0/DCIM/Camera . 
 
 Ejemplo 2:
 Copiar carpeta(con todos sus archivos) desde Android a una carpeta específica en el ordenador con Linux
