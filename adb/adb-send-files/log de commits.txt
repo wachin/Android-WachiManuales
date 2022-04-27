@@ -1,0 +1,20 @@
+
+
+adb-push-from-Linux-to-Android
+
+git commit -m "Add script to push from Linux adb-linux folder to Android adb-android folder"
+
+
+adb-push-from-Linux-to-AndroidSD
+
+git commit -m "Add script to push from Linux adb-linux folder to Android micro SD adb-android folder"
+
+
+adb-pull-from-Android-to-Linux
+
+git commit -m "Add script to push from Android adb-android folder to Linux adb-linux folder"
+
+
+adb-pull-from-AndroidSD-to-Linux
+
+git commit -m "Add script to push from Android micro SD adb-android folder to Linux adb-linux folder"
